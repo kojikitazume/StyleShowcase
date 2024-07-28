@@ -9,13 +9,14 @@
     <h1>Welcome to StyleShowcase</h1>
     <p>Your one-stop destination for beautiful haircuts and styling.</p>
     <nav>
-      <ul>
-        <li><a href="/stylists">Stylists</a></li>
-        <li><a href="/styles">Styles</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
+  <ul>
+    <li><a href="<%= root_path %>">Home</a></li>
+    <li><a href="<%= gallery_path %>">Gallery</a></li>
+    <li><a href="<%= reviews_path %>">Reviews</a></li>
+    <li><a href="<%= services_path %>">Services</a></li>
+    <li><a href="<%= contact_path %>">Contact</a></li>
+  </ul>
+</nav>
   </header>
   <main>
     <section id="featured">
@@ -24,7 +25,7 @@
         <img src="<%= asset_path('example-stylist.jpg') %>" alt="Stylist Image">
         <h3>koji kitazume</h3>
         <p>Expert in modern cuts and color.</p>
-        <a href="/stylists/jane-doe">View Profile</a>
+        <a href="<%= stylists_path %>">View Profile</a>
       </div>
     </section>
     <section id="styles">

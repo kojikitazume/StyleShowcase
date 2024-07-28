@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stylists List</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+  <header>
+    <h1>Our Stylists</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/styles">Styles</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="stylists">
+      <h2>List of Stylists</h2>
+      <ul>
+        <% @stylists.each do |stylist| %>
+          <li>
+            <h3><%= link_to stylist.name, stylist_path(stylist) %></h3>
+            <p><%= stylist.description %></p>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 StyleShowcase. All rights reserved.</p>
+  </footer>
+</body>
+</html>
