@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.1.6
+      - image: ruby:3.1  # Rubyの公式イメージ
     steps:
       - checkout
       - run:
@@ -20,7 +20,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/ruby:3.1.6
+      - image: ruby:3.1  # Rubyの公式イメージ
     steps:
       - checkout
       - run:
