@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   resources :stylists, only: [:show, :index]
   post 'contact', to: 'pages#send_message'
+  post 'users/guest_sign_in', to: 'users#guest_sign_in', as: 'user_guest_sign_in'
 end
