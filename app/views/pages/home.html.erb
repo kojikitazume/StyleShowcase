@@ -1,2 +1,43 @@
-<h1>Welcome to My Portfolio</h1>
-<p>Your one-stop destination for beautiful haircuts and styling.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StyleShowcase</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+  <header>
+    <h1>Welcome to StyleShowcase</h1>
+    <p>Your one-stop destination for beautiful haircuts and styling.</p>
+    <nav>
+      <ul>
+        <li><a href="/stylists">Stylists</a></li>
+        <li><a href="/styles">Styles</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="featured">
+      <h2>Featured Stylists</h2>
+      <div class="stylist-card">
+        <img src="<%= asset_path('example-stylist.jpg') %>" alt="Stylist Image">
+        <h3>koji kitazume</h3>
+        <p>Expert in modern cuts and color.</p>
+        <a href="/stylists/jane-doe">View Profile</a>
+      </div>
+    </section>
+    <section id="styles">
+      <h2>Popular Styles</h2>
+      <div class="style-card">
+        <img src="<%= asset_path('example-style.jpg') %>" alt="Style Image">
+        <h3>Classic Bob</h3>
+        <p>A timeless cut that never goes out of style.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 StyleShowcase. All rights reserved.</p>
+  </footer>
+</body>
+</html>
