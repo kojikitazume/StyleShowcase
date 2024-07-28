@@ -17,7 +17,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/ruby:3.1
+      - image: circleci/ruby:latest
     steps:
       - checkout
       - run:
