@@ -1,0 +1,8 @@
+<h1>Contact Us</h1>
+<p>For appointments, please reach out to us!</p>
+<%= simple_form_for :contact, url: '/contact' do |f| %>
+  <%= f.input :name, label: 'Your Name' %>
+  <%= f.input :email, label: 'Your Email' %>
+  <%= f.input :message, as: :text, label: 'Your Message' %>
+  <%= f.button :submit, 'Send Message' %>
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StyleShowcase</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+  <header>
+  </header>
+  <main>
+    <section id="featured">
+      <h2>Featured Stylists</h2>
+      <div class="stylist-card">
+        <img src="<%= asset_path('example-stylist.jpg') %>" alt="Stylist Image">
+        <h3>koji kitazume</h3>
+        <p>Expert in modern cuts and color.</p>
+        <a href="<%= stylists_path %>">View Profile</a>
+      </div>
+    </section>
+    <section id="styles">
+      <h2>Popular Styles</h2>
+      <div class="style-card">
+        <img src="<%= asset_path('example-style.jpg') %>" alt="Style Image">
+        <h3>Classic Bob</h3>
+        <p>A timeless cut that never goes out of style.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+  </footer>
+</body>
+</html>

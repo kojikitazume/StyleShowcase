@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>StyleShowcase</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<head>
+  <title>StyleShowcase</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+  <header>
+    <h1>Welcome to StyleShowcase</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/stylists">Stylists</a></li>
+        <li><a href="/styles">Styles</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <% if user_signed_in? %>
+          <li>
+            <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
+              <%= submit_tag 'Logout' %>
+            <% end %>
+          </li>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li>
+            <%= form_with url: user_guest_sign_in_path, method: :post, local: true do %>
+              <%= submit_tag 'Guest Sign In' %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+  <main>
     <%= yield %>
-  </body>
+  </main>
+  <footer>
+    <p>&copy; 2024 StyleShowcase. All rights reserved.</p>
+  </footer>
+</body>
 </html>
