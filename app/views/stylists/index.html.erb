@@ -6,21 +6,26 @@
 </head>
 <body>
   <header>
+    <!-- ヘッダーの内容を追加できます -->
   </header>
   <main>
     <section id="stylists">
-      <h2>List of Stylists</h2>
+      <h1>Stylists List</h1>
+      <%= link_to 'Add New Stylist', new_stylist_path, class: 'button' %>
+      
       <ul>
         <% @stylists.each do |stylist| %>
           <li>
             <h3><%= link_to stylist.name, stylist_path(stylist) %></h3>
             <p><%= stylist.description %></p>
+            <%= link_to 'View Profile', stylist_path(stylist) %>
           </li>
         <% end %>
       </ul>
     </section>
   </main>
   <footer>
+    <!-- フッターの内容を追加できます -->
   </footer>
 </body>
 </html>
